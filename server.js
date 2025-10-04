@@ -16,9 +16,9 @@ const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/collabora
 const connectToDatabase = async () => {
   try {
     await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
-    console.log('MongoDB connected');
+    console.log('Successfully connected to MongoDB');
   } catch (err) {
-    console.error('MongoDB connection error:', err);
+    console.error('Error connecting to MongoDB:', err);
     process.exit(1); // Exit process on error
   }
 };
