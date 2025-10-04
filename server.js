@@ -39,4 +39,10 @@ io.on('connection', (socket) => {
 });
 
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, (err) => {
+  if (err) {
+    console.error('Error starting server:', err);
+    process.exit(1);
+  }
+  console.log(`Server running on port ${PORT}`);
+});
