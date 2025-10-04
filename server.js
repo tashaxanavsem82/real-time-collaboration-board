@@ -14,7 +14,7 @@ app.use(express.json());
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/collaboration-board';
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error(err));
+  .catch(err => console.error('MongoDB connection error:', err));
 
 // Define routes
 app.get('/', (req, res) => {
